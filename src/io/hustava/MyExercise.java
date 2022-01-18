@@ -28,19 +28,19 @@ public class MyExercise {
                 System.out.println();
 
                 //Create a method that prints all people that have last name beginning with C
-                printLastNameBeginningwithC(people);
+                printLastNameBeginningWithC(people);
                 System.out.println();
 
                 //create more flexible conditional printing
                 //passing behaviour via interface and anonymous implementation
-                printConditionaly(people, new Condition() {
+                printConditionally(people, new Condition() {
                     @Override
                     public boolean test(Person p){
                         return (p.getLastName().startsWith("C"));
                     }
                 });
 
-                printConditionaly(people, new Condition() {
+                printConditionally(people, new Condition() {
                     @Override
                     public boolean test(Person p){
                         return (p.getFirstName().startsWith("C"));
@@ -52,7 +52,7 @@ public class MyExercise {
 
     }
     // not flexible
-    private static void printLastNameBeginningwithC(List<Person> people) {
+    private static void printLastNameBeginningWithC(List<Person> people) {
         for (Person p : people) {
             if (p.getLastName().startsWith("C")){
                 System.out.println(p);
@@ -61,7 +61,7 @@ public class MyExercise {
         }
     }
 
-    private static void printConditionaly(List<Person> people, Condition condition) {
+    private static void printConditionally(List<Person> people, Condition condition) {
         for (Person p : people) {
             if (condition.test(p)){
                 System.out.println(p);
